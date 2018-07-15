@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require('passport'); // Node.js middleware necessary for the authentication of Json Web Token
 
 //bring in api files for routes
 const users = require("./routes/api/users");
@@ -12,7 +13,9 @@ const posts = require("./routes/api/posts");
 const app = express();
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 
 // DB Config
@@ -24,8 +27,11 @@ mongoose
   .then(() => console.log("Your MongoDB is Connected"))
   .catch(err => console.log(err));
 
-//route to hompage
-app.get("/", (req, res) => res.send("What Up Doe!"));
+// Passport Middleware
+app.use(passport.initialize()); //--> everything else done in passport will be in config strategy for our passport strategy
+
+//Passport
+require('./config/passport')(passport);
 
 // Use Routes
 app.use("/api/users", users);
