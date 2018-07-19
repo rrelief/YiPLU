@@ -17,15 +17,12 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">YiPLU</h1>
+                <h1 className="display-3 mb-4">GYFTY</h1>
+                <p className="lead"> The Gift That Keeps On Giving</p>
                 <p className="lead">
                   {" "}
-                  Where Young Professionals come to link up!
-                </p>
-                <p className="lead">
-                  {" "}
-                  Create a profile, showcase your work, and show off how #lit
-                  you are!
+                  Originally a place to connect on gift-giving, now also a place
+                  to connect who you are, what you do, and where you do it.
                 </p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
