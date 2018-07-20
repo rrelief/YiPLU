@@ -1,3 +1,3 @@
-# YiPLU
+# Gyftyy
 
-Young Professional Social Media Network
+The gifting community.
